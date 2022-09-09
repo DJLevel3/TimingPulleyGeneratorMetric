@@ -36,6 +36,14 @@
 			U: .254 * mmToIn, // distance from pitch circle to OD
 			H: 1.4 * mmToIn // tooth height
         }
+	
+	var MM_3 = { // http://www.jens-s.dk/media/124731/contitech-synchrobelt_trapez.pdf
+            RW: 1.5 * mmToIn,
+            FA: ( $("#N").val() >=24 ? 20 : 28 ) * Math.PI/180, // flank angle, in radians
+			P: .11811, // pitch
+			U: .254 * mmToIn, // distance from pitch circle to OD
+			H: 1.14 * mmToIn // tooth height
+        }
                
 		function Arc(_r,_p1,_p4,_inA,_outA) {
 			this.p1 = _p1; // first point in arc
@@ -62,6 +70,9 @@
             var N = $("#N").val(); // 20;
             
             switch($("#SIZE").val()) {
+		        case "3MM":
+			        SP = MM_3;
+			        break;
                 case "MXL":
                     SP = MXL;
                     break;
@@ -261,6 +272,7 @@
                 <select id="SIZE">>
                     <option value="MXL">MXL</option>
                     <option value="XL">XL</option>
+		    <option value="3MM">3MM</option>
                 </select><br>
                 <label for="N:">Number of Teeth:</label><br>
 				<input type="text" value="10" id="N"><br>
