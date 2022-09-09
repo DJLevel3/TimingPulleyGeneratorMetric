@@ -31,11 +31,11 @@
 	var MXL, XL, L;
 	function setSpecs() {
 		MXL = { // http://www.jens-s.dk/media/124731/contitech-synchrobelt_trapez.pdf
-			RW: ($("#N").val() >= 24 ? 1.97 : 1.01) * mmToIn,
+			RW: ($("#N").val() >= 24 ? 1.27 : 1.11) * mmToIn,
 			FA: ($("#N").val() >= 24 ? 20 : 28) * Math.PI / 180, // flank angle, in radians
 			P: .118, // pitch
 			U: .254 * mmToIn, // distance from pitch circle to OD
-			H: 0.64 * mmToIn // tooth height
+			H: 1.04 * mmToIn // tooth height
 		}
 
 		XL = { // http://www.jens-s.dk/media/124731/contitech-synchrobelt_trapez.pdf
